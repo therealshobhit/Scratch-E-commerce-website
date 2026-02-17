@@ -6,11 +6,21 @@ const path = require("path");
 
 const db = require("./config/mongoose-connection")
 
+// jo humne routes bnae h aur uhdr export kiya h unko yha likh rha hu 
+const ownersroutes =  require("./routes/ownersroutes");
+const productsroutes =  require("./routes/productsroutes");
+const usersroutes =  require("./routes/usersroutes");
+
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname,"public")));
-app.use("view enginge","ejs");
+app.set("view engine","ejs");
+
+// now what we are doing jo bhi routes h unke accordings end kr rhe h 
+app.use("/owners",ownersroutes);
+app.use("/products",productsroutes);
+app.use("/users",usersroutes);
 
 app.get("/",(req,res)=>{
     res.send("hey")
