@@ -1,4 +1,4 @@
-const mongoose = require("mobgoose");
+const mongoose = require("mongoose");
 // mongoose.connect("mongodb://127.0.0.1:27017/scratch")  Now we will not write this because module ka kaam hota h schema provide krna models create krna toh ab hum connection krenge config vale part mei 
 
 const userSchema = mongoose.Schema({

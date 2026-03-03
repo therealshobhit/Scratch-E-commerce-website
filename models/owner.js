@@ -9,6 +9,7 @@ fullname: {
     },
 email: String,
 password: String,
+contact:Number,
 product:{
         type:  Array,
         default: []
