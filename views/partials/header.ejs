@@ -14,9 +14,12 @@
     
     <nav class="w-full fixed top-0 left-0 px-5 py-3 flex justify-between">
         <h3 class="text-xl">Scatch</h3>
-        <div class="flex gap-5">
-            <a href="/shop" class="text-xl">Shop</a>
-            <a href="/cart" class="text-xl">Cart</a>
-            <a href="/user/logout" class="text-xl text-red-600">Logout</a>
-        </div>
+        <%var loggedin  = typeof loggedin !== "undefined"?loggedin:true%>
+        <% if(loggedin){%>
+            <div class="flex gap-5">
+                <a href="/shop" class="text-xl">Shop</a>
+                <a href="/cart" class="text-xl">Cart</a>
+                <a href="/user/logout" class="text-xl text-red-600">Logout</a>
+            </div>
+         <%} %>
     </nav>

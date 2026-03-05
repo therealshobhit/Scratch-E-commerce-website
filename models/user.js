@@ -10,18 +10,25 @@ const userSchema = mongoose.Schema({
     },
     email: String,
     password: String,
-    cart:{
-        type:  Array,
-        default: []
-    },
-    order:{
-        type:  Array,
-        default: []
+    cart: [{
+        // yahan ref: "product" dena sabse zaroori tha
+        //  taaki .populate("cart") asali product data (image, price) la sake
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "product"
+    }],
+    order: {
+        type: Array,
+        // we need to ref here ki jo id aarhi h vo kiski id hogi 
+        ref: "product"
     },
     isadmin: Boolean,
     contact: Number,
     // for now taking picture as string
     picture: String
 })
-// module.exports=mongoose.model("user",userSchema); now we will also not use this 
 
+//  OVERWRITE FIX: 
+ // Industrial standard check taaki server restart par crash na ho
+// module.exports=mongoose.model("user",userSchema); now we will also not use this 
+ // Schema ko Model mein wrap karna zaroori hai tabhi find() kaam karega
+module.exports = mongoose.models.user || mongoose.model("user", userSchema);

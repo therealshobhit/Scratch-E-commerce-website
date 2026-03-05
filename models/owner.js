@@ -17,4 +17,4 @@ product:{
 gstno: Number,
 picture: String
 })
-module.exports=mongoose.model("user",ownerSchema);
+module.exports=mongoose.model("owner",ownerSchema);

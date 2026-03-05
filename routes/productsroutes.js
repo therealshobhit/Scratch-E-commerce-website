@@ -1,5 +1,5 @@
 const express = require("express");
-const router = express();
+const router = express.Router();
 const productSchema = require('../models/product');
 const upload = require('../config/multer-config');
 const mongoose = require('mongoose');

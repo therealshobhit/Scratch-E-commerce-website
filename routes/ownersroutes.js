@@ -41,7 +41,7 @@ if (process.env.NODE_ENV === "development") {
 }
 router.get("/admin", async (req, res) => {
   let success = req.flash("success") ;
-    res.render('createproducts',{success});
+    res.render('createproduct',{success});
   });
 
 // router.post('/')
