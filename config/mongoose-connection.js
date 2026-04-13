@@ -12,7 +12,9 @@ const dbgr = require("debug")("development:mongoose");
 
 // config.get("MONGODB_URI") ISSE hoga ki jo ye h ye khud se hi decide krta h ki konsa environment mei chl rha h hmara code lije development ya kyaaa 
 
-mongoose.connect(`${db("MONGODB_URI")}/scratch`)// vese toh it works but some time it doesnot so we will use then and catch method we wil use that instead of console.log
+// mongoose.connect(`${config.get("MONGODB_URI")}/scratch`)// vese toh it works but some time it doesnot so we will use then and catch method we wil use that instead of console.log
+//  upr line work for local host but for public we will use
+ mongoose.connect(`${db}/scratch`) 
 .then(()=>{
     dbgr("connected")
 })
