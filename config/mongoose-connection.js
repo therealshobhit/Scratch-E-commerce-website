@@ -14,7 +14,7 @@ const dbgr = require("debug")("development:mongoose");
 
 // mongoose.connect(`${config.get("MONGODB_URI")}/scratch`)// vese toh it works but some time it doesnot so we will use then and catch method we wil use that instead of console.log
 //  upr line work for local host but for public we will use
- mongoose.connect(`${db}/scratch`) 
+ mongoose.connect(`${db}`) 
 .then(()=>{
     dbgr("connected")
 })
